@@ -163,7 +163,9 @@ public class Conta
         {
             for (Investimento investimento : investimentos)
             {
-                System.out.println("- " + investimento);
+                System.out.println("- Data da operação:  " + investimento.getData() + "\n" +
+                                   "- - Nome do Investimento: " + investimento.getNomeInvestimento() + "\n" +
+                                   "- - Valor do Investimento: " + investimento.getValorInvestimento() + "\n");
             }
         }
     }
@@ -189,6 +191,7 @@ public class Conta
             LocalDate data = LocalDate.now();
 
             this.carteira = this.carteira - valorInvestido;
+            this.carteiraInvestimento = this.carteiraInvestimento + valorInvestido;
 
             Investimento novoInvestimento = new Investimento(data, nome, valorInvestido);
 
@@ -199,7 +202,7 @@ public class Conta
             this.historico.add(LocalDate.now() + " - Investimento Realizado - " +
                                                      "\n - - Valor da Transferência: " + valorInvestido +
                                                      "\n - - Novo saldo: R$ " + this.carteira + "\n" +
-                                                     "\n - - Valor total de investimento: R$ " + this.carteira + "\n");
+                                                     "\n - - Valor total de investimento: R$ " + this.carteiraInvestimento + "\n");
 
 
         }

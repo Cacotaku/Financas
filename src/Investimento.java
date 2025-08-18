@@ -58,7 +58,6 @@ public class Investimento
     public String toString() {
         return "Investimento{" +
                 "data=" + data +
-                ", scanner=" + scanner +
                 ", nomeInvestimento='" + nomeInvestimento + '\'' +
                 ", valorInvestimento=" + valorInvestimento +
                 '}';

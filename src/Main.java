@@ -3,6 +3,10 @@ import java.util.Scanner;
 
 public class Main
 {
+    public enum Operations
+    {
+        REGISTER, DEPOSIT, WITHDRAW, PIX, INVESTMENT,INVESTMENTHISTORY, CHECK, TRANSITIONSHISTORY, EXIT
+    }
     private Scanner scanner;
 
     public Conta BuscarContaPorId(ArrayList<Conta> contas)
@@ -63,14 +67,56 @@ public class Main
 
         String pixDestino;
 
+        Operations opcao = null;
+
         while(true)
         {
             Menu();
             opc = Integer.parseInt(scanner.nextLine());
 
-            switch (opc)
+            if(opc == 1 )
             {
-                case 1: // Cadastro de uma nova conta
+                opcao = Operations.REGISTER;
+            }
+            else if(opc == 2 )
+            {
+                opcao = Operations.DEPOSIT;
+            }
+            else if(opc == 3 )
+            {
+                opcao = Operations.WITHDRAW;
+            }
+            else if(opc == 4 )
+            {
+                opcao = Operations.PIX;
+            }
+            else if(opc == 5 )
+            {
+                opcao = Operations.INVESTMENT;
+            }
+            else if(opc == 6 )
+            {
+                opcao = Operations.INVESTMENTHISTORY;
+            }
+            else if(opc == 7 )
+            {
+                opcao = Operations.CHECK;
+            }
+            else if(opc == 9 )
+            {
+                opcao = Operations.TRANSITIONSHISTORY;
+            }
+            else if(opc == 0 )
+            {
+                opcao = Operations.EXIT;
+            }
+            else
+            {
+                System.out.println("Opção Inválida\n");
+            }
+            switch (opcao)
+            {
+                case REGISTER: // Cadastro de uma nova conta
                     System.out.println("Cadastro de conta: \n");
                     if(gerenciador.estaVazio() == true)
                     {
@@ -80,7 +126,7 @@ public class Main
 
                     break;
 
-                case 2: //Depósito
+                case DEPOSIT: //Depósito
 
                     System.out.println("Depósito: \n");
                     System.out.println("Digite a conta destino: \n");
@@ -106,7 +152,7 @@ public class Main
 
                     break;
 
-                case 3: //Saque
+                case WITHDRAW: //Saque
 
                     System.out.println("Saque: \n");
                     System.out.println("Digite a conta desejada: \n");
@@ -136,7 +182,7 @@ public class Main
                     }
                     break;
 
-                case 4: //PIX
+                case PIX: //PIX
 
                     System.out.println("Transferência: \n");
                     System.out.println("Digite a sua Conta: \n");
@@ -149,7 +195,7 @@ public class Main
 
                     break;
 
-                case 5: //Investimentos
+                case INVESTMENT: //Investimentos
 
                     System.out.println("Transferência: \n");
                     System.out.println("Digite a sua Conta: \n");
@@ -174,7 +220,7 @@ public class Main
 
                     break;
 
-                case 6: //Verificar Investimentos
+                case INVESTMENTHISTORY: //Verificar Investimentos
 
                     System.out.println("Histórico de Investimentos: \n");
                     System.out.println("Digite a sua Conta: \n");
@@ -197,7 +243,7 @@ public class Main
 
                     break;
 
-                case 7: //Mostrar saldo na tela
+                case CHECK: //Mostrar saldo na tela
 
                     System.out.println("Saldo: \n");
                     System.out.println("Digite a sua Conta: \n");
@@ -221,7 +267,7 @@ public class Main
                     break;
 
 
-                case 9:
+                case TRANSITIONSHISTORY:
                     System.out.println("Histórico da transações: \n");
                     System.out.println("Digite a sua Conta: \n");
 
@@ -242,7 +288,7 @@ public class Main
                     }
                     break;
 
-                case 0:
+                case EXIT:
 
                     System.exit(0);
                     break;
