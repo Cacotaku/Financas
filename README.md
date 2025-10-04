@@ -14,14 +14,6 @@ Este projeto é uma aplicação Java orientada a objetos, desenvolvida com o obj
 
 ---
 
-### Desafios
-Futuras projeções: 
-
--Acrescentar Login e passar ID internamente no sistema <br>
--Acrescentar cadastro de investimentos e selecionar as opções de investimento disponíveis
-
----
-
 ## Como Rodar
 
 Aqui, você explica os passos necessários para rodar o projeto no ambiente local do usuário.
